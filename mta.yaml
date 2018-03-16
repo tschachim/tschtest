@@ -1,3 +1,24 @@
 ID: tschtest
 _schema-version: '2.0'
 version: 0.0.1
+modules:
+  - name: db
+    type: hdb
+    path: db
+    requires:
+      - name: hdi_db
+        properties:
+          TARGET_CONTAINER: ~{hdi-container-name}
+      - name: TSCH_XXX-table-grantor
+resources:
+  - name: hdi_db
+    parameters:
+      config:
+        schema: tschtest
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: TSCH_XXX-table-grantor
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: TSCH_XXX-table-grantor
