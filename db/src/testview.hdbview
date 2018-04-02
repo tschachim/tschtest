@@ -1,0 +1,3 @@
+VIEW "tschtest.db::MyView" 
+AS SELECT "id", "value"
+FROM "tschtest.db::tables.MyTable" 

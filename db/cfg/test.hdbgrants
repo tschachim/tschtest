@@ -1,9 +1,20 @@
 {
-  "TSCH_XXX-table-grantor": {
+  "SX_CROSS_SCHEMA_TESTUSER2": {
      "object_owner": {
-           "roles": [
-               "TSCH_XXX::external_access_g"
-           ]
-     }
+		"schema_privileges":[
+        {
+          "reference":"TESTUSER2",
+          "privileges_with_grant_option":["SELECT", "SELECT METADATA"]
+        }
+      ]
+     },
+    "application_user" : {
+      "schema_privileges":[
+        {
+          "reference":"TESTUSER2",
+          "privileges_with_grant_option":["SELECT", "SELECT METADATA"]
+        }
+      ]
+    }
   }
 }

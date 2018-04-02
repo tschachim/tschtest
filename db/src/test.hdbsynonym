@@ -1,0 +1,20 @@
+{
+  "tschtest.db::TESTTABLE": {
+    "target": {
+      "object": "TESTTABLE",
+      "schema": "TESTUSER2"
+    }
+  },
+  "tschtest.db::Synonym_1": {
+    "target": {
+      "object": "tschtest.db::tables.MyTable",
+      "schema": "TSCHXXXTEST_1"
+    }
+  },
+  "tschtest.db::Synonym_2": {
+    "target": {
+      "object": "TESTTABLE",
+      "schema": "TESTUSER2"
+    }
+  }
+}

@@ -1,8 +1,0 @@
-{
-  "TESTTABLE": {
-    "target": {
-      "object": "TESTTABLE",
-      "schema": "TESTUSER2"
-    }
-  }
-}

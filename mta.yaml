@@ -9,16 +9,16 @@ modules:
       - name: hdi_db
         properties:
           TARGET_CONTAINER: ~{hdi-container-name}
-      - name: TSCH_XXX-table-grantor
+      - name: SX_CROSS_SCHEMA_TESTUSER2
 resources:
   - name: hdi_db
     parameters:
       config:
-        schema: tschtest
+        schema: tschxxxtest
     properties:
       hdi-container-name: '${service-name}'
     type: com.sap.xs.hdi-container
-  - name: TSCH_XXX-table-grantor
+  - name: SX_CROSS_SCHEMA_TESTUSER2
     type: org.cloudfoundry.existing-service
     parameters:
-      service-name: TSCH_XXX-table-grantor
+      service-name: SX_CROSS_SCHEMA_TESTUSER2
