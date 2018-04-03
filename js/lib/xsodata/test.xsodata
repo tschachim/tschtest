@@ -1,0 +1,3 @@
+service{
+	"tschtest.db::tables.TestTableView" as "test";
+}

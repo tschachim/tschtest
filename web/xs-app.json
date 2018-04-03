@@ -1,0 +1,9 @@
+{
+	"welcomeFile": "index.html",
+	"authenticationMethod": "route",
+	"routes": [{
+		"source": "(.*)(.xsodata)",
+		"destination": "core-backend",
+		"authenticationType": "xsuaa"
+  }]
+}

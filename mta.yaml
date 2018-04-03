@@ -8,8 +8,29 @@ modules:
     requires:
       - name: hdi_db
         properties:
-          TARGET_CONTAINER: ~{hdi-container-name}
+          TARGET_CONTAINER: '~{hdi-container-name}'
       - name: SX_CROSS_SCHEMA_TESTUSER2
+  - name: js
+    type: nodejs
+    path: js
+    provides:
+      - name: js_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_db
+      - name: db
+  - name: web
+    type: html5
+    path: web
+    requires:
+      - name: js_api
+        properties:
+          name: core-backend
+          url: '~{url}'
+          forwardAuthToken: true
+        group: destinations
+      - name: HANA2-uaa
 resources:
   - name: hdi_db
     parameters:
@@ -22,3 +43,7 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       service-name: SX_CROSS_SCHEMA_TESTUSER2
+  - name: HANA2-uaa
+    type: com.sap.xs.uaa-space
+    parameters:
+      config-path: ./xs-security.json
